@@ -30,3 +30,31 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  margin-top: 20px;
+}
+
+#my-date-picker {
+  display: flex;
+  flex-flow: column;
+}
+
+.meeting {
+  margin: 20px;
+  background: #191919;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+.meeting div {
+  display: flex;
+}
+
+.alert {
+  color: #FAF151;
+  display: flex;
+  justify-content: flex-end;
+}
