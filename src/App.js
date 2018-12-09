@@ -7,7 +7,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      case: "Străinu vs Spatari",
+      caseNum: "23-1-4250-24102018"
     };
   }
 
@@ -21,9 +23,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div>Caz: Străinu vs Spatari</div>
-          <div>NR: 23-1-4250-24102018</div>
-          { this.state.events && this.state.events.map(event => <Meeting time={event.toISOString()} />)}
+          <div>Caz: {this.state.case}</div>
+          <div>NR: {this.state.caseNum}</div>
+          {this.state.events && this.state.events.map(event =>
+          <Meeting
+            key={event.getTime()}
+            case={this.state.case}
+            caseNum={this.state.case}
+            time={event.toISOString()}
+          />)}
           <MyDatePicker getCurrentDate={this.receiveDate.bind(this)}/>
         </header>
       </div>

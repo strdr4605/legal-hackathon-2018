@@ -58,3 +58,9 @@ button {
   display: flex;
   justify-content: flex-end;
 }
+
+.success {
+  color: #19FF19;
+  display: flex;
+  justify-content: flex-end;
+}
