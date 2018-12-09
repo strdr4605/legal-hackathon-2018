@@ -21,7 +21,7 @@ export default class Meeting extends Component {
           },
           "case": props.case,
           "caseNumber": props.caseNum,
-          "data": props.time,
+          "date": props.time,
         }
       }
       publish(message, (name) => {
@@ -37,7 +37,7 @@ export default class Meeting extends Component {
       return (
         <div className="meeting">
             <div>Sedință Planificată</div>
-            <div>Data și ora: {this.state.time.toUTCString()}</div>
+            <div>Data și ora: {this.state.time.toString()}</div>
             <div className="alert">Citații expediate</div>
             { (() => {
               if (this.state.success && this.state.success.length)

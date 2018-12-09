@@ -30,7 +30,7 @@ class App extends Component {
             key={event.getTime()}
             case={this.state.case}
             caseNum={this.state.case}
-            time={event.toISOString()}
+            time={event.getTime()}
           />)}
           <MyDatePicker getCurrentDate={this.receiveDate.bind(this)}/>
         </header>
