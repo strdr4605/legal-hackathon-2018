@@ -15,7 +15,9 @@ export default class Meeting extends Component {
             "alert": {
               "title": "Citație nouă ",
               "body": "Deschideți în aplicația pentru a vedea conținutul",
-            }
+            },
+            "badge" : 1,
+            "sound" : "bingbong.aiff"
           },
           "case": props.case,
           "caseNumber": props.caseNum,
