@@ -26,8 +26,8 @@ export default function publish(inputMessage, resCallback) {
       }
     },
     message: function(msg) {
-      console.log(msg.message.success);
-      if(msg.message.success) resCallback(msg.message.success);
+      console.log(msg.message.name);
+      if(msg.message.name) resCallback(msg.message.name);
     },
     presence: function(presenceEvent) {
       // handle presence

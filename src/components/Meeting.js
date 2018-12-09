@@ -6,7 +6,7 @@ export default class Meeting extends Component {
       super(props);
       this.state = {
         time: new Date(props.time),
-        success: false,
+        success: [],
       };
 
       let message = {
@@ -22,10 +22,12 @@ export default class Meeting extends Component {
           "data": props.time,
         }
       }
-      publish(message, (success) => {
-        this.setState({
-          success: success
-        })
+      publish(message, (name) => {
+        if(this.state.success.indexOf(name) === -1) {
+          this.setState(prevState => ({
+            success: [...prevState.success, name]
+          }))
+        }
       });
     }
 
@@ -34,7 +36,12 @@ export default class Meeting extends Component {
         <div className="meeting">
             <div>Sedință Planificată</div>
             <div>Data și ora: {this.state.time.toUTCString()}</div>
-            {this.state.success ? <div className="success">Citații confirmată</div> : <div className="alert">Citații expediate</div> }
+            <div className="alert">Citații expediate</div>
+            { (() => {
+              if (this.state.success && this.state.success.length)
+                return this.state.success.map(name => <div className="success" key={new Date().getTime()}>Citație confirmată de {name}</div>)
+              })()
+            }
         </div>
       );
     }
